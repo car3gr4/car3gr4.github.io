@@ -34,36 +34,34 @@ import java.util.Scanner;
     } else{
     //Turno del jugador2
     System.out.println("Turno del jugador2");
-    do{
-      dado1 = tiraDado();
-      dado2 = tiraDado();
-
+   
      System.out.println("Primer dado" + dado1);
      System.out.println("Segundo dado" + dado2);
      puntuacion2 = dado1 + dado2 + puntuacion2;
      System.out.println("Puntuacion del jugador2 :" + puntuacion2);
-     if (puntuaacion2 < 21){
+     if (puntuacion2 < 21){
      System.out.println("¿Quieres seguir juagando? (S\N)");
      respuesta = sc.next().charAt(0);
      }else{
      respuesta = 'N';
      }
     }
-        } While(( respuesta == 'S' || respuesta ='s')&& puntuacion2 < 21));
+        } While(( respuesta == 'S' || respuesta ='s')&& puntuacion2 < 21);
+    //Código para lanzar los dados
+    if (puntuacion2 > 21){
+    System.out.println("EL jugador 2 se ha pasado de 21");
+    System.out.println("Gana el jugador 1");
+    } 
     //Turno del jugador2
     System.out.println("Gana el jugador1");
-    }else if(puntuacion1 > puntuacion2){
+    else if(puntuacion1 > puntuacion2){
     System.out.println("Ganar el jugador1 ");
-    System.out.println("*****GANA EL JUGADOR1*****");
     }else if(puntuacion2 > puntuacion1){
     System.out.println("Gana el jugador2 ");
-    System.out.println("*****GANA EL JUGADOR2*****");
     } else {
     System.out.println("Empate");
     }
-    
-    }
     sc.close();
-    System.out.println("Programa terminado");    
-    }
+    System.out.println("Programa terminado");   
+    }   
     }
