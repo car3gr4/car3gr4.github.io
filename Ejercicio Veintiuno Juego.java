@@ -2,6 +2,7 @@ import java.util.Scanner;
     public class ventiuno{
     public static  int tiradado (){
     return (int) (Math.random()*6) + 1;
+    }
     public static void main ( String args []){
     Scanner sc = new Scanner(System.in);
     int puntuacion1 = 0;
@@ -34,7 +35,9 @@ import java.util.Scanner;
     } else{
     //Turno del jugador2
     System.out.println("Turno del jugador2");
-   
+     do{
+     dado1 = tirado();
+     dado2 = tirado();
      System.out.println("Primer dado" + dado1);
      System.out.println("Segundo dado" + dado2);
      puntuacion2 = dado1 + dado2 + puntuacion2;
@@ -45,21 +48,18 @@ import java.util.Scanner;
      }else{
      respuesta = 'N';
      }
-    }
-        } While(( respuesta == 'S' || respuesta ='s')&& puntuacion2 < 21);
-    //Código para lanzar los dados
+    } While(( respuesta == 'S' || respuesta ='s')&& puntuacion2 < 21);
+    //Comprobar el resultado
     if (puntuacion2 > 21){
     System.out.println("EL jugador 2 se ha pasado de 21");
     System.out.println("Gana el jugador 1");
-    } 
-    //Turno del jugador2
-    System.out.println("Gana el jugador1");
-    else if(puntuacion1 > puntuacion2){
+    } else if(puntuacion1 > puntuacion2){
     System.out.println("Ganar el jugador1 ");
     }else if(puntuacion2 > puntuacion1){
     System.out.println("Gana el jugador2 ");
     } else {
     System.out.println("Empate");
+    }
     }
     sc.close();
     System.out.println("Programa terminado");   
