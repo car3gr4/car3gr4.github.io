@@ -1,0 +1,16 @@
+public class Main {
+  public static void main(String args[]) {
+   //Dado el String borrasca=”Filomena” obtener un array de caracteres con sus
+//letras y mostrarlo en pantalla.
+    String borrasca = "Filomena";
+    char sep[] = new char [borrasca.length()];
+    System.out.println("Las letras serán las siguientes =");
+    for(int i = 0; i< borrasca.length();i++){
+        sep [i] = borrasca.charAt(i);
+        System.out.print(sep[i]);
+        
+    }
+    System.out.println("\nString borrasca" + borrasca);
+   
+    }
+} 
